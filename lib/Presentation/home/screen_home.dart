@@ -129,7 +129,7 @@ class ScreenHome extends StatelessWidget {
                             IconButton(
                                 onPressed: () {},
                                 icon: const Icon(
-                                  Icons.cast,
+                                  Icons.person,
                                   color: whiteColor,
                                 )),
                             kWidth
