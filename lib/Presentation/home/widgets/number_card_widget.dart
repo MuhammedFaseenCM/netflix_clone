@@ -35,7 +35,10 @@ class NumberCardWidget extends StatelessWidget {
             strokeWidth: 3.0,
             child: Text(
               "$index",
-              style: const TextStyle(fontSize: 120, color: Colors.transparent,),
+              style: const TextStyle(
+                fontSize: 120,
+                color: backgroundcolor ,
+              ),
             ),
           ),
         )

@@ -4,16 +4,17 @@ import 'package:netflix_clone/Presentation/Search/widgets/search_title.dart';
 import 'package:netflix_clone/Presentation/home/widgets/number_card_widget.dart';
 import 'package:netflix_clone/Presentation/home/widgets/vertical_scroll_card.dart';
 
-
 class TitleandCardWidget extends StatelessWidget {
   final String title;
   final String image;
   final bool numbercard;
+  final List<String> posterList;
   const TitleandCardWidget(
       {Key? key,
       required this.title,
       required this.image,
-      this.numbercard = false})
+      this.numbercard = false,
+      required this.posterList})
       : super(key: key);
 
   @override
@@ -27,11 +28,12 @@ class TitleandCardWidget extends StatelessWidget {
           maxHeight: 203,
           child: ListView(
             scrollDirection: Axis.horizontal,
-            children: List.generate(10, (index) {
+            children: List.generate(posterList.length, (index) {
               if (numbercard == true) {
-                return NumberCardWidget(image: image, index: index + 1);
+                return NumberCardWidget(
+                    image: posterList[index], index: index + 1);
               } else {
-                return VerticalScrollCard(image: image);
+                return VerticalScrollCard(image: posterList[index]);
               }
             }
                 // VerticalScrollCard(

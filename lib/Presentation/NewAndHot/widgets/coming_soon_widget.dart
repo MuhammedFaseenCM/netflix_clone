@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/Core/Colors/colors.dart';
 import 'package:netflix_clone/Core/Colors/constants.dart';
-import 'package:netflix_clone/Presentation/Widgets/button_widget.dart';
 import 'package:netflix_clone/Presentation/Widgets/video_widget.dart';
 import 'package:netflix_clone/Presentation/home/widgets/top_bgimage.dart';
 
 class ComingSoonWidget extends StatelessWidget {
-  const ComingSoonWidget({super.key});
+  final String id;
+  final String month;
+  final String day;
+  final String posterpath;
+  final String movieName;
+  final String description;
+
+  const ComingSoonWidget(
+      {super.key,
+      required this.id,
+      required this.month,
+      required this.day,
+      required this.posterpath,
+      required this.movieName,
+      required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +29,14 @@ class ComingSoonWidget extends StatelessWidget {
           width: 70,
           height: 500,
           child: Column(
-            children: const [
+            children:  [
               Text(
-                "FEB",
-                style: TextStyle(color: greyColor),
+                month,
+                style:const TextStyle(color: greyColor),
               ),
               Text(
-                "11",
-                style: TextStyle(
+                day,
+                style:const TextStyle(
                     fontSize: 30,
                     letterSpacing: 4.0,
                     fontWeight: FontWeight.w900),
@@ -37,16 +50,20 @@ class ComingSoonWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                VideoWidget(),
+                VideoWidget(posterPath: posterpath),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text(
-                      "Puss in Boots",
-                      style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: -5),
+                    Expanded(
+                      child: Text(
+                        movieName,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: -5),
+                      ),
                     ),
                     Row(
                       children: [
@@ -66,15 +83,17 @@ class ComingSoonWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Text("Coming on Friday"),
+                Text("Coming on $month $day"),
                 kHeight20,
-                const Text(
-                  "Puss in Boots",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                Text(
+                  movieName,
+                  style: const TextStyle(
+                      fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-                const Text(
-                  "Long before he even met Shrek, the notorious fighter, lover and outlaw Puss in Boots becomes a hero when he sets off on an adventure with the tough and sreet smart Kitty Softpaws and the mastermind Humpty Dumpty to save his town. This is the true story of The Cat, The Myth, The Legend...The Boots.",
-                  style: TextStyle(color: greyColor),
+                Text(
+                  description,
+                  maxLines: 7,
+                  style: const TextStyle(color: greyColor),
                 )
               ],
             ),

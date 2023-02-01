@@ -14,7 +14,8 @@ class TopBGImageandWidgets extends StatelessWidget {
           width: double.infinity,
           height: 500,
           decoration: const BoxDecoration(
-              image: DecorationImage(image: NetworkImage(avatarPic))),
+              image: DecorationImage(
+                  fit: BoxFit.cover, image: NetworkImage(avatarPic))),
         ),
         Positioned(
           bottom: 0,
