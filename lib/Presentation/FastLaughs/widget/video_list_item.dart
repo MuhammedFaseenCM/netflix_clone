@@ -1,7 +1,5 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_clone/Core/Colors/colors.dart';
 import 'package:netflix_clone/Core/Colors/constants.dart';
 import 'package:netflix_clone/Core/Colors/strings.dart';

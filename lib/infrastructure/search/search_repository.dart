@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:netflix_clone/domain/core/api_end_points.dart';
@@ -18,11 +17,10 @@ class SearchRepository with ISearchRespo {
         ApiEndPoints.search,
         queryParameters: {'query': movieQuery},
       );
-      log(response.data.toString());
+
       if (response.statusCode == 200 || response.statusCode == 201) {
         final result = SearchResp.fromJson(response.data);
 
-        log(response.data.toString());
         return Right(result);
       } else {
         return const Left(MainFailure.serverFailure());

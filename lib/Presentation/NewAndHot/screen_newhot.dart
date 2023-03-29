@@ -34,7 +34,7 @@ class ScreenNewAndHot extends StatelessWidget {
                   IconButton(
                       onPressed: () {},
                       icon: const Icon(
-                        Icons.cast,
+                        Icons.person,
                         color: whiteColor,
                       )),
                   kWidth
@@ -148,6 +148,7 @@ class BuildEveryonesWatching extends StatelessWidget {
         }
 
         return ListView.builder(
+          itemCount: state.everyOnesWatchingList.length,
           itemBuilder: (context, index) {
             final tv = state.everyOnesWatchingList[index];
             return EveryonesWatchingWidget(

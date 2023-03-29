@@ -6,11 +6,6 @@ import 'package:netflix_clone/Presentation/downloads/widgets/section1_widget.dar
 import 'package:netflix_clone/Presentation/downloads/widgets/section2_widget.dart';
 import 'package:netflix_clone/Presentation/downloads/widgets/section3_widget.dart';
 
-final List imageList = [
-  "https://www.themoviedb.org/t/p/w220_and_h330_face/wAkpPm3wcHRqZl8XjUI3Y2chYq2.jpg",
-  "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/wawP3mOUeRBrAtnbPwWK5eFaMdV.jpg",
-  "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/iMmMxF6f2OonUrXrHKBLSYAhXly.jpg"
-];
 
 const sectionList = [Section1(), Section2(), Section3()];
 

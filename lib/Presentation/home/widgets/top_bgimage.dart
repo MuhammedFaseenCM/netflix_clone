@@ -4,7 +4,8 @@ import 'package:netflix_clone/Core/Colors/constants.dart';
 import 'package:netflix_clone/Presentation/home/screen_home.dart';
 
 class TopBGImageandWidgets extends StatelessWidget {
-  const TopBGImageandWidgets({super.key});
+  final String imageUrl;
+  const TopBGImageandWidgets({super.key, required this.imageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +14,9 @@ class TopBGImageandWidgets extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 500,
-          decoration: const BoxDecoration(
+          decoration:  BoxDecoration(
               image: DecorationImage(
-                  fit: BoxFit.cover, image: NetworkImage(avatarPic))),
+                  fit: BoxFit.cover, image: NetworkImage(imageUrl))),
         ),
         Positioned(
           bottom: 0,

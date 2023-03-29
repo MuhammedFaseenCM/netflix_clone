@@ -1,0 +1,46 @@
+Flutter : Flutter is a cross-platform development tookit by google which helps to
+deploy on multiple platform with single code base and achieve 
+great UI quickly 
+
+Advantage of flutter
+
+High performance
+Hot reload and Hot restart feature
+powerful community
+No need to test in Both IOS and Android platform
+
+Disadvantages of Flutter
+
+Limited set of tools and libraries
+Massive file size
+Flutter is comparitively new language , So need continous updation
+
+Life cycle of a stateful widget
+
+CreateState()-> This method is called when we create another stateful widget
+Initstate()-> This method is called only once at the initial stage. We can add any operations that we need to run from the starting of that widget
+
+Didchangedepemdencies()-> This method is called after initstate method. This method called when the dependencies of widget changes.
+
+Build()-> This is called each time when we need to render the ui widget on the screen
+
+SetState()-> It is essentially called each time we hot reload application for survey the update made to the widget
+
+Deactivate()-> When the widget is removed from the tree this method will be called.
+            Is there any resources we want to clean temporarily we can add that to this method
+
+Dispose()-> This method will call when the widget is removed from the tree permenantly.
+
+There are two types of widget in flutter
+
+Stateless widget -:
+                    A stateless widget cannot change its state during the runtime of flutter application
+                
+Stateful widget-: We can modify easily throughout its lifecycle without 
+                  reinitialized again.It can change the inner data during the runtime
+            
+Future: A Future represents a value or error that will be available at some point in the future. It is used to handle asynchronous operations such as making network requests or reading data from a file. When a Future is resolved, it can update the UI by triggering a rebuild of the widget tree. Futures are typically used to handle one-off asynchronous operations that don't need to be monitored continuously.
+
+State: State is used to manage mutable data that can change over time in response to user interactions or other events. Stateful Widgets are used to hold the mutable state data and update the UI in response to changes in the state. 
+
+

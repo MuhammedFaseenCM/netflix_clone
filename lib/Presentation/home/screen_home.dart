@@ -27,17 +27,23 @@ class ScreenHome extends StatelessWidget {
           final ScrollDirection direction = notification.direction;
           if (direction == ScrollDirection.reverse) {
             scrollnotifier.value = true;
-          } else if (direction == ScrollDirection.forward) {
+          } else if (direction == ScrollDirection.forward ||
+              direction == ScrollDirection.idle) {
             scrollnotifier.value = false;
           }
-
           return true;
         },
         child: Stack(
           children: [
             BlocBuilder<HomeBloc, HomeState>(
               builder: (context, state) {
-                if (state.isLoading) {
+                if (state.pastYearMovieList.isEmpty) {
+                  return const Center(
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                    ),
+                  );
+                } else if (state.isLoading) {
                   return const Center(
                     child: CircularProgressIndicator(
                       strokeWidth: 2,
@@ -66,12 +72,15 @@ class ScreenHome extends StatelessWidget {
                   return "$imageAppendUrl${e.posterPath}";
                 }).toList();
                 southIndianMovieList.shuffle();
-                tensedramasMovieList.shuffle();
+                //  tensedramasMovieList.shuffle();
 
                 ///ListView
                 return ListView(
                   children: [
-                    const TopBGImageandWidgets(),
+                    TopBGImageandWidgets(
+                      imageUrl: trendingMovieList[8],
+                    ),
+                    kHeight20,
                     TitleandCardWidget(
                       title: "Released in the past year",
                       image: theLastOfus,

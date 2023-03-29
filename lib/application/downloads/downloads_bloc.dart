@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
@@ -19,7 +17,7 @@ class DownloadsBloc extends Bloc<DownloadsEvent, DownloadsState> {
     on<_GetDownloadsImage>((event, emit) async {
       emit(state.copyWith(isLoading: true, downloadsFailureorSucess: none()));
 
-      final Either<MainFailure, List<Downloads>> downloadsOption =
+      final downloadsOption =
           await downloadsRepo.getDownloadsImage();
 
       emit(downloadsOption.fold(

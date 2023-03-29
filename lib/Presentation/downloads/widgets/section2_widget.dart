@@ -42,14 +42,6 @@ class Section2 extends StatelessWidget {
               ),
             );
           }
-          // else if (state.downloads!.isEmpty || state.downloads == null) {
-          //   return SizedBox(
-          //       width: size.width,
-          //       height: size.width,
-          //       child: const Center(
-          //         child: Text("empty data"),
-          //       ));
-          // }
           return SizedBox(
             width: size.width,
             height: size.width,
